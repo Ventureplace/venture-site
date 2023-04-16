@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
+import "../css/alpha-gradient.css";
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -13,10 +14,18 @@ const Header = () => {
       }
     }
   `);
+
   const headerImage = getImage(data.file);
 
   return (
-    <Box sx={{ width: "100%", height: "100%", position: "relative" }}>
+    <Box
+      className="alpha-gradient-container"
+      sx={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+      }}
+    >
       <GatsbyImage
         image={headerImage}
         alt="Header image"
@@ -25,6 +34,7 @@ const Header = () => {
           width: "100%",
           objectFit: "cover",
           objectPosition: "center",
+          position: "relative",
         }}
       />
     </Box>

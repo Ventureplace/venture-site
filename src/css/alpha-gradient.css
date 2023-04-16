@@ -1,0 +1,17 @@
+/* src/shimmer.css */
+.alpha-gradient-container {
+    position: relative;
+  }
+  
+  .alpha-gradient-container::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 25%;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  }
+  

@@ -1,14 +1,34 @@
-import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-import EmailForm from "../components/emailForm";
-import FooterCopy from "../components/footerCopy";
+import React from 'react';
+import { Box, Typography } from '@mui/material';
+import { ThemeProvider } from '@mui/system';
+import theme from '../theme';
+import Header from '../components/Header';
+import SignupForm from '../components/SignupForm';
 
-export default function Component() {
+const IndexPage = () => {
   return (
-    <div>
-      <StaticImage src="../images/logo_no_type.png" alt="My image" />
-      <EmailForm />
-      <FooterCopy /> 
-    </div>
-  );
-}
+    <ThemeProvider theme={theme}>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          minHeight: '100vh',
+          backgroundColor: 'background.default',
+         color: 'text.secondary',
+}}
+>
+<Header />
+<Typography variant="h1" sx={{ color: 'text.primary' }}>
+Earn Your Stake
+</Typography>
+<Typography variant="subtitle1">
+More coming soon...
+</Typography>
+<SignupForm />
+</Box>
+</ThemeProvider>
+);
+};
+
+export default IndexPage;
